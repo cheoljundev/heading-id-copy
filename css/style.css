@@ -1,3 +1,8 @@
 .wp-block-heading {
     cursor: pointer;
 }
+
+.copy-icon {
+    width: 0.8em;
+    cursor: pointer;
+}

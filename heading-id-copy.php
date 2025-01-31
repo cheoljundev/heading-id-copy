@@ -32,13 +32,16 @@ function headingcopy_headings($content) {
                 $id = $id_base;
             }
 
-            return "<h{$tag} class=\"wp-block-heading\" id=\"{$id}\" onclick=\"copyToClipboard('{$id}')\">{$text}</h{$tag}>";
+            return "<h{$tag} class=\"wp-block-heading\" id=\"{$id}\" onclick=\"copyToClipboard('{$id}')\">{$text}
+                <img src=\"" . plugin_dir_url(__FILE__) . "images/copy.png\" class=\"copy-icon\" alt=\"Copy\">
+            </h{$tag}>";
         },
         $content
     );
 
     return $content;
 }
+
 add_filter('the_content', 'headingcopy_headings');
 
 // Load custom styles for cursor: pointer on wp-block-heading
