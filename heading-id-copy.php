@@ -13,14 +13,17 @@ if (!defined('ABSPATH')) {
     exit; // Direct access not allowed
 }
 
-// Add ID to heading tags (h2 to h6) with wp-block-heading class
+// Add ID to heading tags (h2 to h6)
 function headingcopy_headings($content) {
     $content = preg_replace_callback(
-        '/<h([2-6]) class="wp-block-heading">(.*?)<\/h\1>/iu',
+        '/<h([2-6])([^>]*)>(.*?)<\/h\1>/iu',
         function ($matches) {
             $tag = $matches[1];
-            $text = $matches[2];
-            $id_base = preg_replace('/\s+/u', '-', trim($text));
+            $attributes = $matches[2]; // Preserve existing attributes (class, id, etc.)
+            $text = $matches[3];
+
+            // Generate a unique ID based on the heading text (excluding <a> tags)
+            $id_base = preg_replace('/\s+/u', '-', trim(strip_tags($text)));
             $id_base = preg_replace('/[^\p{L}\p{N}-]+/u', '', $id_base);
 
             static $id_counter = [];
@@ -32,7 +35,13 @@ function headingcopy_headings($content) {
                 $id = $id_base;
             }
 
-            return "<h{$tag} class=\"wp-block-heading\" id=\"{$id}\" onclick=\"copyToClipboard('{$id}')\">{$text}
+            // Check if the <h> tag contains an <a> tag
+            $has_anchor = stripos($text, '<a ') !== false;
+
+            // Add onclick only if there is no <a> tag inside the <h> tag
+            $onclick = $has_anchor ? '' : " onclick=\"copyToClipboard('{$id}')\"";
+
+            return "<h{$tag}{$attributes} id=\"{$id}\"{$onclick}>{$text}
                 <img src=\"" . plugin_dir_url(__FILE__) . "images/copy.png\" class=\"copy-icon\" alt=\"Copy\">
             </h{$tag}>";
         },

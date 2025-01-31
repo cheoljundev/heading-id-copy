@@ -1,4 +1,4 @@
-.wp-block-heading {
+#page .wp-block-heading, #page .elementor-heading-title  {
     cursor: pointer;
 }
 
