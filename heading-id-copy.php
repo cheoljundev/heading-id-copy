@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Heading ID Copy
  * Description: Add ID to heading tags and allow copying URL with the heading ID.
- * Version: 1.0
+ * Version: 1.3
  * Author: 김철준
  * Author URI: https://devcj.kr
  * License: GPL2
