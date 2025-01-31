@@ -49,6 +49,6 @@ add_action('wp_enqueue_scripts', 'headingcopy_styles');
 
 // Enqueue clipboard.js script
 function headingcopy_script() {
-    wp_enqueue_script('heading-id-copy-script', plugin_dir_url(__FILE__) . 'js/clipboard.js', [], null, true);
+    wp_enqueue_script('heading-id-copy-script', plugin_dir_url(__FILE__) . 'js/headingIdCopyFunction.js', [], null, true);
 }
 add_action('wp_enqueue_scripts', 'headingcopy_script');
