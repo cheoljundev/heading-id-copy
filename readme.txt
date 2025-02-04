@@ -2,11 +2,11 @@
 Contributors: devcj
 Tags: copy, heading, URL, clipboard
 Tested up to: 6.7
-Stable tag: 1.4
+Stable tag: 1.7
 License: GPL-2.0+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Description: Add IDs to heading tags (h2-h6) and allow users to copy the URL to clipboard with the heading ID.
-Version: 1.4
+Version: 1.7
 
 == Installation ==
 1. Upload the plugin folder to the /wp-content/plugins/ directory.
@@ -24,17 +24,20 @@ It also adds a small copy icon next to each heading, allowing users to quickly c
 - Simple and lightweight, with minimal impact on performance.  
 
 == Changelog ==  
-= 1.4 =  
-* Added detailed plugin description.  
+= 1.7 =
+* Added a new setting option that allows administrators to choose whether the link copy functionality and copy icon are shown to all users or only to administrators.
 
-= 1.3 =  
-* Version update and minor improvements.  
+= 1.4 =
+* Added detailed plugin description.
 
-= 1.2 =  
-* Enabled heading ID copy functionality for both posts and pages.  
+= 1.3 =
+* Version update and minor improvements.
 
-= 1.1 =  
-* Added a copy icon for easier heading ID copying.  
+= 1.2 =
+* Enabled heading ID copy functionality for both posts and pages.
 
-= 1.0 =  
-* Initial release. 
+= 1.1 =
+* Added a copy icon for easier heading ID copying.
+
+= 1.0 =
+* Initial release.

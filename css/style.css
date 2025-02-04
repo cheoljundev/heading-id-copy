@@ -1,8 +1,12 @@
-#page h2,#page h3,#page h4,#page h5,#page h6{  
+#page h2.heading-id-copy,
+#page h3.heading-id-copy,
+#page h4.heading-id-copy,
+#page h5.heading-id-copy,
+#page h6.heading-id-copy{  
     cursor: pointer;
 }
 
-.copy-icon {
+.heading-id-copy .copy-icon {
     width: 0.8em;
     cursor: pointer;
 }
